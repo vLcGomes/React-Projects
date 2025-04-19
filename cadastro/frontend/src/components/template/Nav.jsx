@@ -1,15 +1,15 @@
 import './Nav.css'
-
+import { Link } from 'react-router-dom'
 
 const nav = props =>
   <aside className="menu-area">
     <nav className='menu'>
-      <a href="#/">
+      <Link to="/">
         <i className="fa fa-home"></i> Início
-      </a>
-      <a href="#/users">
-        <i className="fa fa-users"></i> Usuários
-      </a>
+      </Link>
+      <Link to="/users">
+        <i clLinkssName="fa fa-users"></i> Usuários
+      </Link>
     </nav>
   </aside>
 
