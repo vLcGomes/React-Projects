@@ -1,14 +1,29 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Arthur Oliveira",
       "email": "aoliveira@email.com.br"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Maria Julia da Silva",
-      "email": "mjds@email.com.br"
+      "email": "majuds@email.com.br"
+    },
+    {
+      "id": "8302",
+      "name": "Pedro Barros",
+      "email": "pbarros@email.com"
+    },
+    {
+      "id": "22c4",
+      "name": "Carla Silva",
+      "email": "csilva@email.com"
+    },
+    {
+      "id": "733f",
+      "name": "Pablo Costa",
+      "email": "pablocosta@email.com"
     }
   ]
 }
