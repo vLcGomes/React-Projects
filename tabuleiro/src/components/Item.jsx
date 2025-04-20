@@ -1,8 +1,10 @@
 import './Item.css'
 
-export default props => {
-  return (
-    <div className="item" style='background: ${props.color}'>
+function Item(props) {
+  return <div 
+    className='item'
+    style={{backgroundColor: props.preta ? '#000' : '#fff'}}>
     </div>
-  )
 }
+
+export default Item
