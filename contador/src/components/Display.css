@@ -1,0 +1,10 @@
+.display {
+  width: 300px;
+  height: 105px;
+  border-radius: 1rem;
+  color: #fff;
+  background: rgba(2, 0, 36);
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 105px;
+}
