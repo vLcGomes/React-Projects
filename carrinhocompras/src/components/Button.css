@@ -2,6 +2,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
-  height: 20px;
+  width: auto;
+  height: auto;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 8px;
+  justify-self: center;
+  border-radius: 15px;
+  margin-top: 50px;
+}
+
+.button:hover {
+  display: flex;
+  background: #2222228f;
+  color: #fff;
+  border: 2px solid #fff;
+  transition: .2s;
 }

@@ -1,14 +1,16 @@
-import logo from './logo.svg';
-import Display from './components/Display';
-import Button from './components/Button';
-import Cart from './components/Cart'
+import Item from './components/Item';
 import './App.css';
+import Car1 from './images/car1.png'
+import Car2 from './images/car2.png'
+import Car3 from './images/car3.png'
 
 function App() {
   return (
     <div className="App">
       <div id='content'>
-        <Button />
+        <Item image={Car1} text='Batmovel' />
+        <Item image={Car2} text='Gol Quadrado' />
+        <Item image={Car3} text='Escort Conversível' />
       </div>
     </div>
   );
