@@ -4,6 +4,7 @@ import Car1 from './images/car1.png'
 import Car2 from './images/car2.png'
 import Car3 from './images/car3.png'
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Item image={Car2} text='Gol Quadrado' />
         <Item image={Car3} text='Escort Conversível' />
       </div>
+      <Footer />
     </div>
   );
 }

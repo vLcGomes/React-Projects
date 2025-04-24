@@ -21,3 +21,18 @@
 #cart-icon:hover {
   color: #aaa;
 }
+
+#cart-count {
+  display: block; /* Utilizar none e alterar apenas apos item adicionado no carrinho */
+  content: '';
+  font-size: 10px;
+  color: #fff;
+  position: relative;
+  border-radius: 50%;
+  top: 13px;
+  left: 15px;
+  width: 15px;
+  height: 15px;
+  background-color: rgb(52, 106, 206);
+}
+
