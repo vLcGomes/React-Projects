@@ -1,5 +1,5 @@
 import './Item.css'
-import Button from './Button'
+import Button from '../Button/Button'
 
 function Item(props) {
 

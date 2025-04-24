@@ -1,10 +1,10 @@
-import Item from './components/Item';
+import Item from '../components/Item/Item';
 import './App.css';
-import Car1 from './images/car1.png'
-import Car2 from './images/car2.png'
-import Car3 from './images/car3.png'
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Car1 from '../images/car1.png'
+import Car2 from '../images/car2.png'
+import Car3 from '../images/car3.png'
+import Navbar from '../components/Navbar/Navbar';
+import Footer from '../components/Footer/Footer';
 
 function App() {
   return (

@@ -10,6 +10,8 @@
 
 .title {
   color: #fff;
+  text-decoration: none;
+  font-size: 36px;
 }
 
 #cart-icon {
@@ -29,7 +31,7 @@
   color: #fff;
   position: relative;
   border-radius: 50%;
-  top: 13px;
+  top: 10px;
   left: 15px;
   width: 15px;
   height: 15px;
