@@ -1,0 +1,8 @@
+.display {
+  height: 40px;
+  width: 70px;
+  background-color: green;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  background-color: #f8f0f0
+}
