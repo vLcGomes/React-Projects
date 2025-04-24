@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <div id='content'>
+      <div id='contentApp'>
         <Item image={Car1} text='Batmovel' />
         <Item image={Car2} text='Gol Quadrado' />
         <Item image={Car3} text='Escort Conversível' />

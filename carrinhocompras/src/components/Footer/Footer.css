@@ -8,3 +8,13 @@
   background-color: #000;
   color: #aaa;
 }
+
+@media(max-width: 800px) {
+  .footer {
+    flex-direction: column;
+  }
+
+  .footer span {
+    margin: 10px 0;
+  }
+}

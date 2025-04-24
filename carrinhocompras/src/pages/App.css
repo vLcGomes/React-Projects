@@ -13,9 +13,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-width: 350px;
 }
 
-#content {
+#contentApp {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,4 +27,17 @@
   padding: 50px 0;
   border-radius: 1rem;
   box-shadow: 5px 5px 15px 5px;
+}
+
+@media(max-width: 1050px) {
+  #contentApp {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 0;
+    margin: 20px auto;
+  }
+
+  .item {
+    margin: 15px auto;
+  }
 }
