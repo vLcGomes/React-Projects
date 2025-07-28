@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: gray;
+}
+
+.timer {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 150px;
+  background-color: #31210c;
+  border-radius: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px 25px;
+  gap: 10px;
+}
+
+.hours, .minutes, .seconds {
+  width: 30%;
+  font-size: 100px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #cfcfcf;
+  border-radius: 5px;
+}
+
+.options {
+  display: flex;
+  gap: 5px;
+}
+
+.start, .pause, .reset {
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+}
