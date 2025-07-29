@@ -35,8 +35,8 @@ body {
   font-size: 100px;
   font-weight: bold;
   text-align: center;
-  background-color: #cfcfcf;
-  border-radius: 5px;
+  background-color: #cfcfcf40;
+  border-radius: 25%;
 }
 
 .options {
@@ -48,4 +48,5 @@ body {
   padding: 10px;
   border-radius: 10px;
   font-weight: bold;
+  cursor: pointer;
 }
