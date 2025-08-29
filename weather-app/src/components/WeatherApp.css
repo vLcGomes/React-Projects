@@ -84,6 +84,18 @@
   cursor: pointer;
 }
 
+.loader {
+  width: 5rem;
+  margin-top: 10rem;
+}
+
+.not-found {
+  font-size: 3rem;
+  color: #484569;
+  margin-top: 5rem;
+  text-shadow: -.3rem .5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
 .weather-type {
   position: absolute;
   top: 48%;
