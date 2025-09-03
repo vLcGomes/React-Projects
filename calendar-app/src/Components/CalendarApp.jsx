@@ -1,4 +1,4 @@
-
+import './CalendarApp.css'
 
 function CalendarApp() {
   return <div className="calendar-app">
@@ -23,7 +23,7 @@ function CalendarApp() {
       </div>
       <div className="days">
         <span>1</span>
-        <span>2</span>
+        <span className="current-day">2</span>
         <span>3</span>
         <span>4</span>
         <span>5</span>
