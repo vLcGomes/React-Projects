@@ -1,4 +1,5 @@
 import CalendarApp from "./Components/CalendarApp";
+import './Components/CalendarApp.css'
 
 function App() {
   return <div className="container">
