@@ -5,9 +5,52 @@ import scienceImg from '../assets/images/science.jpg'
 import healthImg from '../assets/images/health.jpg'
 import entertainmentImg from '../assets/images/entertainment.jpg'
 import nationImg from '../assets/images/nation.jpg'
+import noImg from '../assets/images/no-img.png'
 import './News.css'
+import { useEffect, useState } from 'react'
+import NewsModal from './NewsModal'
+
+const categories = ['general', 'world', 'business', 'technology', 'entertainment', 'sports', 'science', 'health', 'nation']
+
 
 function News() {
+  const [headline, setHeadline] = useState(null)
+  const [news, setNews] = useState([])
+  const [selectedCategory, setSelectedCategory] = useState('general')
+  const [showModal, setShowModal] = useState(false)
+  const [selectedArticle, setSelectedArticle] = useState(null)
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      const url = `https://gnews.io/api/v4/top-headlines?category=${selectedCategory}&lang=en&max=10&apikey=${import.meta.env.VITE_API_KEY}`
+      const res = await fetch(url)
+      const data = await res.json()
+
+      const fetchedNews = data.articles
+
+      fetchedNews.forEach((article) => {
+        if(!article.image) {
+          article.image = noImg
+        }
+      })
+
+      setHeadline(fetchedNews[0])
+      setNews(fetchedNews.slice(1, 7))
+    }
+
+    fetchNews()
+  }, [selectedCategory])
+
+  const handleCategoryClick = (e, category) => {
+    e.preventDefault()
+    setSelectedCategory(category)
+  }
+
+  const handleArticleClick = (article) => {
+    setSelectedArticle(article)
+    setShowModal(true)
+  }
+
   return (
     <div className="news-app">
       <div className="news-header">
@@ -17,56 +60,50 @@ function News() {
         <nav className="navbar">
           <h1 className="nav-heading">Categories</h1>
           <div className="categories">
-            <a href="#" className="nav-link">General</a>
-            <a href="#" className="nav-link">World</a>
-            <a href="#" className="nav-link">Business</a>
-            <a href="#" className="nav-link">Technology</a>
-            <a href="#" className="nav-link">Entertainment</a>
-            <a href="#" className="nav-link">Sports</a>
-            <a href="#" className="nav-link">Science</a>
-            <a href="#" className="nav-link">Health</a>
-            <a href="#" className="nav-link">Nation</a>
+            {categories.map((category) => (
+                <a 
+                href="#" 
+                className="nav-link" 
+                key={category} 
+                onClick={e => {
+                  handleCategoryClick(e, category)
+                }}
+                >
+                  {category}
+                </a>
+              ))
+            }
+          
           </div>
         </nav>
         <div className="news-section">
-          <div className="headline">
-            <img src={techImg} alt="Headline Image" />
-            <h2 className="headline-title">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim, esse?</h2>
+          {headline && (
+            <div className="headline" onClick={() => handleArticleClick(headline)}>
+            <img src={headline.image || noImg} alt={headline.title} />
+            <h2 className="headline-title">{headline.title}</h2>
           </div>
+          )}
+          
           <div className="news-grid">
-            <div className="news-grid-item">
-              <img src={worldImg} alt="News Image" />
-              <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h3>
-            </div>
-            <div className="news-grid-item">
-              <img src={sportsImg} alt="News Image" />
-              <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h3>
-            </div>
-            <div className="news-grid-item">
-              <img src={scienceImg} alt="News Image" />
-              <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h3>
-            </div>
-            <div className="news-grid-item">
-              <img src={healthImg} alt="News Image" />
-              <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h3>
-            </div>
-            <div className="news-grid-item">
-              <img src={entertainmentImg} alt="News Image" />
-              <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h3>
-            </div>
-            <div className="news-grid-item">
-              <img src={nationImg} alt="News Image" />
-              <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h3>
-            </div>
+            {news.map((article, index) => (
+              <div className="news-grid-item" key={index} onClick={() => handleArticleClick(article)}>
+                <img src={article.image || noImg} alt={article.title} />
+                <h3>{article.title}</h3>
+              </div>
+            ))}
+            
           </div>
         </div>
+        <NewsModal show={showModal} article={selectedArticle} onClose={() => {
+          setShowModal(false)
+        }}/>
       </div>
-      <div className="footer">
+      <footer>
         <p className="copyright">
           <span>News App</span>
         </p>
         <p>&copy; All Rights Reserved.</p>
-      </div>
+      </footer>
     </div>
   )
 }
